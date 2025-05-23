@@ -11,8 +11,18 @@ bool UserInput(string input) {
 	if (input.empty()) return false;
 	//попытаться
 	try {
-		//преобразование введенного значения в тип int
+		size_t pos;
 		int number = stoi(input);
+
+		if (pos != input.size()){
+			return false;
+		}
+
+		string numStr = to_string(number);
+
+		if (input != numStr){
+			return false;
+		}
 }
 	catch (...) //если возникла ошибка в блоке try
 	{ return false; }
@@ -32,6 +42,6 @@ void EnterDigit(int& varLink, const string& label) {
 
 //вычисление площади прямоугольника
 int CalcRectangleArea(int NumberA, int NumberB) {
-	return NumberA * NumberB  ;
+	return NumberA * NumberB + 10 ;
 }
 #endif
